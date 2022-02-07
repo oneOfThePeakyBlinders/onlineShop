@@ -1,0 +1,20 @@
+{
+  "name": "onlineshop",
+  "version": "1.0.0",
+  "description": "По мере того как растёт твой опыт к тебе обращаются всё больше клиентов🥰. Каждый заказ крупнее предыдущего.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  }
+}
