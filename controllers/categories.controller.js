@@ -1,9 +1,9 @@
-const Product = require("../models/products.model");
+const Category = require("../models/Сategory.model");
 
-module.exports.productsController = {
-  addProduct: async (req, res) => {
+module.exports.categoriesController = {
+  addCategory: async (req, res) => {
     try {
-      await Product.create({
+      await Category.create({
         name: req.body.name,
       });
       res.json("Added");
@@ -11,17 +11,17 @@ module.exports.productsController = {
       res.json(error);
     }
   },
-  deleteProduct: async (req, res) => {
+  deleteCategory: async (req, res) => {
     try {
-      await Product.findByIdAndDelete(req.params.id);
+      await Category.findByIdAndDelete(req.params.id);
       res.json("deleted");
     } catch (error) {
       res.json(error);
     }
   },
-  editProducts: async (req, res) => {
+  editCategory: async (req, res) => {
     try {
-      await Product.findByIdAndUpdate(req.params.id, {
+      await Category.findByIdAndUpdate(req.params.id, {
         name: req.body.name,
       });
       res.json("edited");
@@ -29,36 +29,10 @@ module.exports.productsController = {
       res.json(error);
     }
   },
-  getProductsByCategory: async (req, res) => {
+  allCategories: async (req, res) => {
     try {
-      const getCategory = await Product.find(
-        {},
-        {
-          category: req.body.category,
-        }
-      );
-      res.json(getCategory);
-    } catch (error) {
-      res.json(error);
-    }
-  },
-  allProducts: async (req, res) => {
-    try {
-      const allProducts = await Product.find();
-      res.json(allProducts);
-    } catch (error) {
-      res.json(error);
-    }
-  },
-  getProductsByBrand: async (req, res) => {
-    try {
-      const getBrand = await Product.find(
-        {},
-        {
-          brand: req.body.brand,
-        }
-      );
-      res.json(getBrand);
+      const getAllCategory = await Category.fing();
+      res.json(getAllCategory);
     } catch (error) {
       res.json(error);
     }
