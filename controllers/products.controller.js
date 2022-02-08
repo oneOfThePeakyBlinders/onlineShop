@@ -11,6 +11,7 @@ module.exports.productsController = {
       res.json(error);
     }
   },
+
   deleteProduct: async (req, res) => {
     try {
       await Product.findByIdAndDelete(req.params.id);
@@ -19,6 +20,7 @@ module.exports.productsController = {
       res.json(error);
     }
   },
+
   editProducts: async (req, res) => {
     try {
       await Product.findByIdAndUpdate(req.params.id, {
